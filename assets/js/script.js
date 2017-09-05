@@ -51,20 +51,45 @@ $(document).ready(function() {
 
 
 // timer here	
-	var count=60;
+	var count=90;
 	var counter=setInterval(timer, 1000);
 
 	function timer() {
   		count=count-1;
   		if (count <= 0) {
-    	clearInterval(counter);
+    	//clearInterval(counter);
     	$("#resultScreen").show();
-     	return;
   		}
 
   	$('#timerDisplay').html(count);
 	}
 
+
+// answers
+
+	function submitAnswers(){
+
+		var q1 = document.forms["quizForm"]["q1"].value;
+		$('#submitBtn').click(function() {
+			alert(q1);
+		});
+
+	}
+
+
+
+	// correctAnswer = ('#caQ1');
+
+	// function correctAnswer() {
+	// 	$('#caQ1').click(function() {
+	// 		if(correctAnswer === true) {
+	// 			numCorrect += 1;
+	// 			$('#numCorrect').html(numCorrect);
+	// 			numAnswered += 1;
+	// 			$('#numAnswered').html(numAnswered);
+	// 		}
+	// 	})
+	// }
 
 
 });
