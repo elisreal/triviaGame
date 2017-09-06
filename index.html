@@ -27,22 +27,22 @@
 						</div>
 					</div>
 				</div>
-			<!-- Start Game Screen 
+			<!-- Start Game Screen --> 
 			<div id="startPage">
-					<div class="row">
-						<div class="col-lg-12">
-							<h1 class="instructions">
-							Instructions will go here to discribe how to play the game. 
-							</h1>
-						</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<h1 class="instructions">
+						Instructions will go here to discribe how to play the game. 
+						</h1>
 					</div>
-					<div class="row">
-						<div class="col-lg-12">
-							<button id="startBtn" class="btn btn-default btn-lg btn-primary">START GAME
-							</button>
-						</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<button id="startBtn" class="btn btn-default btn-lg btn-primary">START GAME
+						</button>
 					</div>
-				</div> -->
+				</div>
+			</div>
 
 				<div id="playArea">
 					<div class="row text-center">
@@ -50,86 +50,33 @@
 							<h1 id="timerDisplay">90</h1>
 						</div>
 					</div>
-
-					<!--Question 1 -->
-					<form name="quizForm" onsubmit="submitAnswers()">
-						<div class="row text-center">
-							<div class="col-lg-12">
-								<h3 class="question1">What is Michael Scott's middle name?</h3>
-							</div>
-						</div>
-						<div  id="question1" class="row text-center">
-							<div class="col-lg-12">
-	  							<input id="i1Q1" name="q1" value="a" type="radio" class="custom-control-input answer"> Kurt
-
-	  							<input id="caQ1" name="q1" value="b" type="radio" class="custom-control-input answer"> Gary
-
-	  							<input id="i2Q1" name="q1" value="c" type="radio" class="custom-control-input answer"> Devon
-
-								<input id="i3Q1" name="q1" value="d" type="radio" class="custom-control-input answer"> Morgan
-							</div>
-						</div>
-
-						<!-- Question 2 -->
-
-						
-
-						<!-- Question3 -->
-
-						
-
-						<!-- Question4 -->
-
-						
-
-						<!-- Question5 -->
-
-						
-
-						<!-- Question6 -->
-
-						
-
-						<!--Question7 -->
-
-						
-
-						<!-- Question8 -->
-
-						
-
-						<!--Question8 -->
-
-						
-
-						<!-- Question9 -->
-
-						
-
-						<!-- Question 10-->
-
-						
-						<!-- Submit Answers btn -->
-
-						<div class="row text-center">
-							<div class="col-lg-12">
-								<input id="submitBtn" class="btn btn-default btn-lg btn-primary" type="submit">
-							</div>
-						</div>
-					</form>
-
-				</div>
-				<div id="resultScreen">
-					<div class="row">
+					<div class="row text-center">
 						<div class="col-lg-12">
+							<h3 id="questions"></h3>
+							<ul id="choices"></ul>
+							<div id="message"></div>
+						</div>
+					</div>
+					<div class="row text-center">
+						<div class="col-lg-12">
+							<button id="nextButton" class="btn btn-default btn-lg btn-primary">Next Question</button>
+						</div>
+					</div>
+				</div>
+
+				<div id="resultScreen">
+					<div class="row text-center">
+						<div class="col-md-4">
 							<h1 id="numAnswered">0</h1>
 							<p>Questions Answered</p>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-12">
+						<div class="col-md-4">
 							<h1 id="numCorrect">0</h1>
 							<p>Correct Answers</p>
+						</div>
+						<div class="col-md-4">
+							<h1 id="numWrong">0</h1>
+							<p>Wrong Answers</p>
 						</div>
 					</div>
 				</div>
