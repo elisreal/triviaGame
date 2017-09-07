@@ -1,3 +1,27 @@
+body.main {
+	background-image: url("../images/bg.jpg");
+	background-repeat: no-repeat;
+	background-size: fill;
+	background-position: center top;
+	width: 100%;
+}
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.jumbotron {
+	margin-top: 30px;
+}
+
+.startButton {
+	width: 330px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #timerDisplay {
 	padding: 20px;
 }
@@ -8,4 +32,82 @@
 
 .answer {
 	padding: 20px;
+}
+
+h1.instructions {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2.5rem;
+	font-weight: '700';
+	padding: 40px 20px;
+	text-align: center;
+}
+
+.btn.btn-default.btn-lg.btn-primary {
+background: #888efa;
+background: -moz-linear-gradient(top, #888efa 0%, #6a73f7 100%); 
+background: -webkit-linear-gradient(top, #888efa 0%,#6a73f7 100%);
+background: linear-gradient(to bottom, #888efa 0%,#6a73f7 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888efa', endColorstr='#6a73f7',GradientType=0 ); /* IE6-9 */
+}
+
+.btn.btn-default.btn-lg.btn-primary {
+	border-style: none;
+	border-radius: 0;
+	font-family: 'Montserrat', sans-serif;
+	color: #FFF;
+	font-size: 1rem;
+}
+
+h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2.5rem;
+	font-weight: 700;
+}
+
+h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2rem;
+}
+
+h3 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.5rem;
+}
+
+p {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1rem;
+}
+
+ul {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1rem;
+}
+
+li {
+	padding: 2px 0px;
+}
+
+h3#questions {
+	padding: 20px 50px;
+	line-height: 1.5;
+}
+
+ul#choices {
+	padding-bottom: 30px;
+}
+
+div#resultScreen {
+	padding: 30px 0px;
+}
+
+div.row.text-center.scores {
+	padding-bottom: 30px;
+}
+
+div#message {
+	font-family: 'Montserrat', sans-serif;
+	margin: 10px 0px;
+	color: #888efa;
+	font-weight: 700;
 }

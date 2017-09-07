@@ -87,7 +87,7 @@ $(document).ready(function() {
 	$("#startBtn").click(function() {
 	    $("#startPage").hide();
 	    $("#playArea").show();
-	    timer();
+	    count = 90;
 	});
 
 
@@ -100,6 +100,9 @@ $(document).ready(function() {
   		if (count <= 0) {
   			$('#playArea').hide();
     		$('#resultScreen').show();
+    		$('#numAnswered').html(questions.length);
+    		$('#numCorrect').html(correctAnswers);
+    		$('numWrong').html(numWrong);
   		}
 
   	$('#timerDisplay').html(count);
@@ -141,7 +144,7 @@ $(document).ready(function() {
 // If you're done answering the questions...
                 else {  
                     displayScore()
-                    $(document).find('#nextButton').text("Finish Game");
+                    $(document).find('#nextButton').text("FINISH GAME");
                     quizOver = true;
                     $("#playArea").hide();
                     $("#resultScreen").show();
@@ -149,7 +152,7 @@ $(document).ready(function() {
             }
         } else { 
             quizOver = false;
-            $(document).find('#nextButton').text("Next Question");
+            $(document).find('#nextButton').text("NEXT QUESTION");
             resetQuiz();
             displayCurrentQuestion();
             hideScore();
@@ -198,8 +201,14 @@ function resetQuiz() {
     numAnswered = 0;
     numWrong = 0;
     count = 0
-    hideScore();
 }
+
+$('#againBtn').click(function() {
+	$('resultScreen').hide()
+	resetQuiz();
+	hideScore();
+	$('#startPage').show();
+})
 	
 
 
