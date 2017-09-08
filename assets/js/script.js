@@ -16,43 +16,43 @@
 
 questions = [{
     question: "What is Michael Scott's middle name?",
-    choices: ["Kurt", "Gary", "Devon", "Morgan"],
+    choices: [" Kurt", " Gary", " Devon", " Morgan"],
     correctAnswer: 1
   }, {
     question: "What is the exclusive club that Pam, Oscar, and Toby establish in the episode 'Branch Wars'?",
-    choices: ["The Party Planning Committee", "Kevin and the Zits", "The Finer Things Club", "Here Comes Treble"],
+    choices: [" The Party Planning Committee", " Kevin and the Zits", " The Finer Things Club", " Here Comes Treble"],
     correctAnswer: 2
   }, {
     question: "The actor who plays quality-assurance man Creed Bratton is in fact named Creed Bratton in real life. He was also in a band that was popular in the late 1960s and 1970s. Which band was it?",
-    choices: ["Lynard Skynard", "The Mamas and the Papas", "The Eagles", "The Grassroots"],
+    choices: [" Lynard Skynard", " The Mamas and the Papas", " The Eagles", " The Grassroots"],
     correctAnswer: 3
   }, {
     question: "Dwight owns and runs a farm in his spare time. What does this farm primarily produce?",
-    choices: ["Goats", "Beets", "Corn", "Potatoes"],
+    choices: [" Goats", " Beets", " Corn", " Potatoes"],
     correctAnswer: 1
   }, {
     question: "The members of the Stamford branch play what video game with each other that started as a 'team building exercise'?",
-    choices: ["Call of Duty", "Halo", "Battlefield", "Super Smash Bros."],
+    choices: [" Call of Duty", " Halo", " Battlefield", " Super Smash Bros."],
     correctAnswer: 0
   }, {
     question: "In season 3, what product did Jim tell Dwight he could get at Sharper Image?",
-    choices: ["A massage chair", "A Cross-Bow", "Gaydar", "A Pewter Wizard"],
+    choices: [" A massage chair", " A Cross-Bow", " Gaydar", " A Pewter Wizard"],
     correctAnswer: 2
   }, {
     question: "Jim knows the flavor of yogurt that Pam likes best, but what is it?",
-    choices: ["Mixed Berries", "Strawberry", "Vanilla", "Plain"],
+    choices: [" Mixed Berries", " Strawberry", " Vanilla", " Plain"],
     correctAnswer: 0
   }, {
     question: "In season three's 'Safety Training' episode, what piece of warehouse equipment was Darryl stressing the danger of?",
-    choices: ["The forklift", "A trampoline", "A bailer", "A ladder"],
+    choices: [" The forklift", " A trampoline", " A bailer", " A ladder"],
     correctAnswer: 2
   }, {
     question: "What is Erin Hannon's middle name?",
-    choices: ["Ashley", "Erin", "Kelly", "Noel"],
+    choices: [" Ashley", " Erin", " Kelly", " Noel"],
     correctAnswer: 1
   }, {
     question: "What is the name of Michael's favorite cologne?",
-    choices: ["Drakkar", "Polo", "Brut", "Nightswept"],
+    choices: [" Drakkar", " Polo", " Brut", " Nightswept"],
     correctAnswer: 3
   }];
 
@@ -88,6 +88,7 @@ $(document).ready(function() {
 	    $("#startPage").hide();
 	    $("#playArea").show();
 	    count = 90;
+	    timer();
 	});
 
 
@@ -130,9 +131,11 @@ $(document).ready(function() {
 
                 if (value == questions[currentQuestion].correctAnswer) {
                     correctAnswers++;
+                    $(document).find('#message').text("Correct Answer!!");
                 }
                 else if(value != questions[currentQuestion].correctAnswer) {
                 	numWrong++;
+                	$(document).find('#message').text("Wrong Answer!!");
                 }
 
 // If the current question is answered, display the next question
@@ -191,10 +194,12 @@ function displayScore() {
     $("#numWrong").html(numWrong);
 }
 
+//hides the results screen 
 function hideScore() {
     $("#resultScreen").hide();
 }
 
+//resets the score values and questions
 function resetQuiz() {
     currentQuestion = 0;
     correctAnswers = 0;
@@ -203,11 +208,14 @@ function resetQuiz() {
     count = 0
 }
 
+//click the again button and reset the game
 $('#againBtn').click(function() {
 	$('resultScreen').hide()
 	resetQuiz();
 	hideScore();
 	$('#startPage').show();
+	displayCurrentQuestion();
+	count = 90;
 })
 	
 
