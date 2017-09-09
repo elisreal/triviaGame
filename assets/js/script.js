@@ -129,13 +129,19 @@ $(document).ready(function() {
 // dont show message if you select a choice
                 $(document).find('#message').hide();
 
+// if you get the question right you get a point and a message lets you know its correct
                 if (value == questions[currentQuestion].correctAnswer) {
                     correctAnswers++;
                     $(document).find('#message').text("Correct Answer!!");
+                    $(document).find('#message').show();
                 }
+
+// if you get the question wrong your wrong answers score goes up, you dont get a point
+// and a message pops up telling you that it was a wrong answer
                 else if(value != questions[currentQuestion].correctAnswer) {
                 	numWrong++;
                 	$(document).find('#message').text("Wrong Answer!!");
+                    $(document).find('#message').show();
                 }
 
 // If the current question is answered, display the next question
