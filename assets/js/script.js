@@ -87,13 +87,13 @@ $(document).ready(function() {
 	$("#startBtn").click(function() {
 	    $("#startPage").hide();
 	    $("#playArea").show();
-	    count = 90;
+	    count = 60;
 	    timer();
 	});
 
 
 // timer here	
-	var count = 90;
+	var count = 60;
 	var counter = setInterval(timer, 1000);
 
 	function timer() {
@@ -125,32 +125,27 @@ $(document).ready(function() {
                 $(document).find('#message').text("Please select an answer");
                 $(document).find('#message').show();
             } 
-            else {
+
 // dont show message if you select a choice
+            else {
                 $(document).find('#message').hide();
 
-// if you get the question right you get a point and a message lets you know its correct
+// if you get the question right you get a point
                 if (value == questions[currentQuestion].correctAnswer) {
                     correctAnswers++;
-                    $(document).find('#message').text("Correct Answer!!");
-                    $(document).find('#message').show();
                 }
 
 // if you get the question wrong your wrong answers score goes up, you dont get a point
-// and a message pops up telling you that it was a wrong answer
                 else if(value != questions[currentQuestion].correctAnswer) {
                 	numWrong++;
-                	$(document).find('#message').text("Wrong Answer!!");
-                    $(document).find('#message').show();
                 }
 
 // If the current question is answered, display the next question
-
                 currentQuestion++; 
                 if (currentQuestion < questions.length) {
                     displayCurrentQuestion();
-                    $(document).find('#message').hide();
                 } 
+
 // If you're done answering the questions...
                 else {  
                     displayScore()
@@ -160,7 +155,9 @@ $(document).ready(function() {
                     $("#resultScreen").show();
                 }
             }
-        } else { 
+        } 
+
+        else { 
             quizOver = false;
             $(document).find('#nextButton').text("NEXT QUESTION");
             resetQuiz();
@@ -170,6 +167,7 @@ $(document).ready(function() {
     });
 
 });
+
 
 // This displays the current question AND the choices
 function displayCurrentQuestion() {
@@ -181,12 +179,13 @@ function displayCurrentQuestion() {
     var choiceList = $(document).find("#choices");
     var numChoices = questions[currentQuestion].choices.length;
 
-    // Set the questionClass text to the current question
+// Set the questionClass text to the current question
     $(questionClass).text(question);
 
-    // Remove all current <li> elements (if any)
+// Remove all current <li> elements (if any)
     $(choiceList).find("li").remove();
 
+// Display the choices in a list with radios
     var choice;
     for (i = 0; i < numChoices; i++) {
         choice = questions[currentQuestion].choices[i];
@@ -222,7 +221,7 @@ $('#againBtn').click(function() {
 	hideScore();
 	$('#startPage').show();
 	displayCurrentQuestion();
-	count = 90;
+	count = 60;
 })
 	
 
