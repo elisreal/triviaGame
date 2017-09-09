@@ -149,6 +149,7 @@ $(document).ready(function() {
                 currentQuestion++; 
                 if (currentQuestion < questions.length) {
                     displayCurrentQuestion();
+                    $(document).find('#message').hide();
                 } 
 // If you're done answering the questions...
                 else {  
